@@ -1,0 +1,37 @@
+body, p, legend, label, input {
+    font: normal 12pt verdana, helvetica, sans-serif;
+}
+
+legend {
+
+    font-weight: bold;
+    color: #00cc66;
+}
+
+fieldset {
+
+    padding: 15px;
+    border: 2px #00cc66 solid;
+
+}
+
+
+/* Form */
+
+
+form label {
+
+    float: left;
+    width: 200px;
+    margin: 2px 0px 0px 0px;
+
+}
+
+
+form input {
+
+    margin: 2px 2px 2px 0px;
+    border: 1px black solid;
+
+}
+

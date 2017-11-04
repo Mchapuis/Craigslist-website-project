@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>register</title>
+	<script>
+$(function(){
+    $("#province").on("change", function(){
+        var val = $(this).val();
+        var sub = $("#sub-choice");
+        $("option", sub).filter(function(){
+            if (
+                 $(this).attr("data-group") === val 
+              || $(this).attr("data-group") === "SHOW"
+            ) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+    $('#province').trigger("change");
+});
+
+</script>
+</head>
+
+
+<body>
+
+  <fieldset>
+  <legend>Register</legend>
+   <form id="register" name="register" method="post" action="register.php" enctype="multipart/form-data">
+	<p>Please fill this form</p>
+	
+	<table>
+	<tr>
+		<td>
+		UserName: 
+		</td>
+		<td>
+		<input id="username" type="text" name="username"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		Address: 
+		</td>
+		<td>
+		<input id="address" type="text" name="address"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		Province: 
+		</td>
+		<td>
+		<select id="province" name="province">
+			<option value="Quebec">Quebec</option>
+			<option value="Ontario">Ontario</option>
+			<option value="British-Colombia">British-Colombia</option>
+		</select>
+		</td>
+		<td>
+		City:
+		</td>
+		<td>
+		<select id="sub-choice" name="sub-choice">
+			<option data-group="SHOW" value="0">---SELECT---</option>	
+			<option data-group="Quebec" value="Montreal">Montreal</option>
+			<option data-group="Quebec" value="Quebec">Quebec</option>
+			<option data-group="Quebec" value="Sherbrooke">Sherbrooke</option>
+			<option data-group="Ontario" value="Toronto">Toronto</option>
+			<option data-group="Ontario" value="Waterloo">Waterloo</option>
+			<option data-group="Ontario" value="Ottawa">Ottawa</option>
+			<option data-group="British-Colombia"value="Vancouver">Vancouver</option>
+			<option data-group="British-Colombia"value="Victoria">Victoria</option>
+			<option data-group="British-Colombia"value="Windsor">Windsor</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="submit" id="submit" name="submit"/>
+		</td>
+	</tr>
+   </form>
+	<a href="login.html">login?</a>
+   </fieldset>
+
+</body>
+</html>
+
