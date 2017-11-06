@@ -1,11 +1,11 @@
 $(function(){
-    $('#groups').on('change', function(){
+    $("#province").on("change", function(){
         var val = $(this).val();
-        var sub = $('#sub_groups');
-        $('option', sub).filter(function(){
+        var sub = $("#sub-choice");
+        $("option", sub).filter(function(){
             if (
-                 $(this).attr('data-group') === val 
-              || $(this).attr('data-group') === 'SHOW'
+                 $(this).attr("data-group") === val 
+              || $(this).attr("data-group") === "SHOW"
             ) {
                 $(this).show();
             } else {
@@ -13,5 +13,5 @@ $(function(){
             }
         });
     });
-    $('#groups').trigger('change');
+    $('#province').trigger("change");
 });
