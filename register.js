@@ -1,3 +1,5 @@
+
+// function to select city based on the province chosen
 $(function(){
     $("#province").on("change", function(){
         var val = $(this).val();
@@ -15,3 +17,4 @@ $(function(){
     });
     $('#province').trigger("change");
 });
+
